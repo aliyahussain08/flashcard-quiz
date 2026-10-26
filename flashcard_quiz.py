@@ -1,3 +1,4 @@
+import random
 cards = {
     "The 4 Ps are product, price, place and...?": "promotion",
     "Total revenue minus total costs equals...?": "profit",
@@ -10,9 +11,10 @@ cards = {
     "What does the acid test ratio measure?": "liquidity",
     "A business's sales as a percentage of total market sales is called...?": "market share"
 }
-
+questions = list(cards.items())
+random.shuffle(questions)
 score = 0
-for question, answer in cards.items():
+for question, answer in questions:
     guess = input(question + " ")
     if guess.lower() == answer:
         print("Correct!")
